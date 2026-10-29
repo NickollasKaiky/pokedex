@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <h1 class="titulo">Pokédex</h1>
+    <p class="descricao">Digite o nome de um Pokémon para ver suas informações.</p>
+    <form class="container busca">
+        <input type="text" placeholder="Nome do Pokémon...">
+        <button><i class="bi bi-search"></i></button>
+    </form>
+
+    <div class="conatiner pokebola">
+        <img class="imgPokebolaCima" src="assets/images/pokebola_cima.png" alt="Topo Pokebola">
+    <!-- colocar no id resultado pelo javascript para mudar a imagem da pokebola -->
+
+        <img id="resultado" class="imgPokebola" src="assets/images/pokebola.png" alt="Pokebola">
+
+             <div class="container carta">
+            <div class="info-top">
+                <h2>Pikachu</h2>
+                <span class="numero">#0025</span>
+            </div>
+
+            <img
+                class="imagem-pokemon"
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+                alt="Pikachu"
+            >
+
+            <div class="tipos">
+                <span class="tipo">Elétrico</span>
+            </div>
+
+            <div class="medidas">
+                <div>
+                    <p>0,4 m</p>
+                    <span>Altura</span>
+                </div>
+
+                <div>
+                    <p>6,0 kg</p>
+                    <span>Peso</span>
+                </div>
+            </div>
+
+            <section class="status">
+                <h3>Status</h3>
+
+                <div class="stat">
+                    <span>HP</span>
+                    <b>35</b>
+                    <div class="barra">
+                        <div class="progresso hp"></div>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <span>Ataque</span>
+                    <b>55</b>
+                    <div class="barra">
+                        <div class="progresso ataque"></div>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <span>Defesa</span>
+                    <b>40</b>
+                    <div class="barra">
+                        <div class="progresso defesa"></div>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <span>Velocidade</span>
+                    <b>90</b>
+                    <div class="barra">
+                        <div class="progresso velocidade"></div>
+                    </div>
+                </div>
+
+        </div>
+
+        <img class="imgPokebolaBaixo" src="assets/images/pokebola_baixo.png" alt="">
+    </div>
+    </div>
+</body>
+
+</html>
