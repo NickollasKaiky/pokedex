@@ -54,7 +54,7 @@ button{
 
 }
 
-.imgPokebolaCima, .imgPokebolaBaixo{
+.imgPokebolaCima, .imgPokebolaBaixo, .carta{
     display: none;
     opacity: 0;
 }
@@ -64,14 +64,15 @@ button{
 }
 
 
-.pokebola:has(#resultado) .imgPokebola{
+.pokebola:has(#mostrar) .imgPokebola{
     opacity: 0;
     display: none;
     transition: all 0.3s;
 }
 
-.pokebola:has(#resultado) .imgPokebolaCima,
-.pokebola:has(#resultado) .imgPokebolaBaixo{
+.pokebola:has(#mostrar) .imgPokebolaCima,
+.pokebola:has(#mostrar) .imgPokebolaBaixo,
+.pokebola:has(#mostrar) .carta{
     display: block;
     opacity: 1;
     transition: all 0.3s;
@@ -81,6 +82,14 @@ button{
     /* display: none; */
     width: 25%;
     background-color: #111821;
+
+    z-index: 2;                     
+    min-width: 300px;
+    padding: 16px;
+    background-color: #111821;
+    border: 3px solid #ffff00;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 .carta .infoTop{
@@ -88,16 +97,44 @@ button{
     justify-content: space-between;
 }
 
+.carta .imgPokemon {
+    width: 100%;
+    aspect-ratio: 1;
+    margin: 12px 0;
+    border: 1px solid #ffff00;
+    border-radius: 12px;
+}
+
+.carta .tipos {
+    display: flex;
+}
+
 .carta .tipo{
-    float: left;
+    padding: 3px 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #111821;
+
+    border-radius: 20px;
+    background-color: #ffff00;
 }
 
 .carta .medidas{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin: 14px 0;
+    padding: 12px 0;
+    border-top: 1px dashed #293747;
+    border-bottom: 1px dashed #293747;
 }
 
-.carta .status ul{
-    float: left;
-    list-style: none;
+.carta .stat b {
+    text-align: right;
+}
+
+.carta .barra {
+    height: 8px;
+    background: #243142;
+    border-radius: 999px;
+    overflow: hidden;
 }
