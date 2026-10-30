@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width= initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-
     <h1 class="titulo">Pokédex</h1>
     <p class="descricao">Digite o nome de um Pokémon para ver suas informações.</p>
+
     <form class="container busca">
         <input type="text" placeholder="Nome do Pokémon...">
         <button><i class="bi bi-search"></i></button>
@@ -19,24 +20,21 @@
 
     <div class="conatiner pokebola">
         <img class="imgPokebolaCima" src="assets/images/pokebola_cima.png" alt="Topo Pokebola">
-    <!-- colocar no id  -> #mostrar <- pelo javascript para mudar a imagem da pokebola -->
+        <img class="imgPokebola" src="assets/images/pokebola.png" alt="Pokebola" id="">
 
-        <img id="" class="imgPokebola" src="assets/images/pokebola.png" alt="Pokebola">
-
-             <div class="container carta">
+        <div class="container carta">
             <div class="info-top">
                 <h2>Pikachu</h2>
                 <span class="numero">#0025</span>
             </div>
 
-            <img
-                class="imgPokemon"
+            <img class="imgPokemon"
                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
-                alt="Pikachu"
-            >
+                alt="Pikachu">
 
             <div class="tipos">
                 <span class="tipo">Elétrico</span>
+                <span class="tipo2">nao tem</span>
             </div>
 
             <div class="medidas">
@@ -44,7 +42,6 @@
                     <p>0,4 m</p>
                     <span>Altura</span>
                 </div>
-
                 <div>
                     <p>6,0 kg</p>
                     <span>Peso</span>
@@ -85,12 +82,13 @@
                         <div class="progresso velocidade"></div>
                     </div>
                 </div>
+            </section>
 
+            <img class="imgPokebolaBaixo" src="assets/images/pokebola_baixo.png" alt="">
         </div>
+    </div>
 
-        <img class="imgPokebolaBaixo" src="assets/images/pokebola_baixo.png" alt="">
-    </div>
-    </div>
+    <script src="assets/js/script.js" defer></script>
 </body>
 
 </html>
