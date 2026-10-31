@@ -63,7 +63,7 @@ button {
 
 .imgPokebolaCima,
 .imgPokebolaBaixo,
-.carta {
+.carta, .shiny{
   visibility: hidden;
   opacity: 0;
 }
@@ -79,7 +79,8 @@ button {
 
 .pokebola:has(#mostrar) .imgPokebolaCima,
 .pokebola:has(#mostrar) .imgPokebolaBaixo,
-.pokebola:has(#mostrar) .carta {
+.pokebola:has(#mostrar) .carta, 
+.pokebola:has(#mostrar) .shiny{
   opacity: 1;
   visibility: visible;
   transition: all ease 0.3s;
@@ -122,7 +123,7 @@ button {
   text-transform: capitalize;
   color: #111821;
   border-radius: 20px;
-  background-color: var(--cor);
+  background-color: var(--cor); /* var serve para aplicar uma propriedade personalizada*/
 }
 
 .carta .medidas {
@@ -143,11 +144,40 @@ button {
   background: #243142;
   border-radius: 999px;
   overflow: hidden;
+  margin-bottom: 15px;
+}
+.erro{
+  margin-top: 10px;
+  color: red;
+  font-size: larger;
+}
+.tente{
+  margin-top: 3px;
+}
+.shiny{
+  text-align: center;
+  height: 40px;
+  width: 100%;
+  color: rgb(1, 1, 136);
+  font-size: large;
+  background-color: rgb(134, 10, 10);
+  border-radius: 15px;
+  box-shadow: #0b0f14 0px 4px;
+  transform: translateY(0);
+
+  transition: transform 0.1s ease;
+  cursor: pointer;
+}
+.shiny:active{
+    transform: translateY(10px);
+  box-shadow: 0 0 #0b0f14;
+  color: red;
+  background-color: blue;
 }
 
 /* cor da borda da carta */
 .carta.normal {
-  --cor: #a8a878;
+  --cor: #a8a878; /* o --cor está sendo utilizado para criar variaveis reutilizaveis */
 }
 
 .carta.fire {
