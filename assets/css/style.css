@@ -13,7 +13,6 @@ body {
 
 .container {
   margin: 0 auto;
-  /* border: solid 1px red; */
 }
 
 .titulo,
@@ -48,6 +47,19 @@ button {
   border-radius: 3px;
 }
 
+/* mensagem de erro da busca */
+.erro {
+  margin-top: 10px;
+  text-align: center;
+  color: red;
+  font-size: larger;
+}
+
+.tente {
+  margin-top: 3px;
+  text-align: center;
+}
+
 .pokebola img {
   width: 25%;
   margin: 0 auto;
@@ -63,14 +75,20 @@ button {
 
 .imgPokebolaCima,
 .imgPokebolaBaixo,
-.carta, .shiny{
+.carta {
   visibility: hidden;
   opacity: 0;
+  transition: all ease 0.3s;
 }
 
 .pokebola {
   position: relative;
   text-align: center;
+}
+
+#resultado {
+  position: relative;
+  z-index: 2;
 }
 
 .pokebola:has(#mostrar) .imgPokebola {
@@ -79,8 +97,7 @@ button {
 
 .pokebola:has(#mostrar) .imgPokebolaCima,
 .pokebola:has(#mostrar) .imgPokebolaBaixo,
-.pokebola:has(#mostrar) .carta, 
-.pokebola:has(#mostrar) .shiny{
+.pokebola:has(#mostrar) .carta {
   opacity: 1;
   visibility: visible;
   transition: all ease 0.3s;
@@ -123,7 +140,7 @@ button {
   text-transform: capitalize;
   color: #111821;
   border-radius: 20px;
-  background-color: var(--cor); /* var serve para aplicar uma propriedade personalizada*/
+  background-color: var(--cor); /* var aplica a propriedade personalizada --cor */
 }
 
 .carta .medidas {
@@ -146,15 +163,15 @@ button {
   overflow: hidden;
   margin-bottom: 15px;
 }
-.erro{
-  margin-top: 10px;
-  color: red;
-  font-size: larger;
+
+/* a largura é definida pelo JS*/
+.carta .progresso {
+  height: 100%;
+  background: var(--cor);
 }
-.tente{
-  margin-top: 3px;
-}
-.shiny{
+
+/* botão shiny */
+.carta .shiny {
   text-align: center;
   height: 40px;
   width: 100%;
@@ -164,164 +181,92 @@ button {
   border-radius: 15px;
   box-shadow: #0b0f14 0px 4px;
   transform: translateY(0);
-
   transition: transform 0.1s ease;
   cursor: pointer;
 }
-.shiny:active{
-    transform: translateY(10px);
+
+.carta .shiny:active {
+  transform: translateY(10px);
   box-shadow: 0 0 #0b0f14;
   color: red;
   background-color: blue;
 }
 
-/* cor da borda da carta */
-.carta.normal {
-  --cor: #a8a878; /* o --cor está sendo utilizado para criar variaveis reutilizaveis */
+/* --cor: usada na borda da carta, nas barras e no fundo dos tipos
+   (a classe do tipo vai na carta e em cada span .tipo) */
+.normal {
+  --cor: #a8a878;
 }
 
-.carta.fire {
+.fire {
   --cor: #f08030;
 }
 
-.carta.water {
+.water {
   --cor: #6890f0;
 }
 
-.carta.electric {
+.electric {
   --cor: #f8d030;
 }
 
-.carta.grass {
+.grass {
   --cor: #78c850;
 }
 
-.carta.ice {
+.ice {
   --cor: #98d8d8;
 }
 
-.carta.fighting {
+.fighting {
   --cor: #c03028;
 }
 
-.carta.poison {
+.poison {
   --cor: #a040a0;
 }
 
-.carta.ground {
+.ground {
   --cor: #e0c068;
 }
 
-.carta.flying {
+.flying {
   --cor: #a890f0;
 }
 
-.carta.psychic {
+.psychic {
   --cor: #f85888;
 }
 
-.carta.bug {
+.bug {
   --cor: #a8b820;
 }
 
-.carta.rock {
+.rock {
   --cor: #b8a038;
 }
 
-.carta.ghost {
+.ghost {
   --cor: #705898;
 }
 
-.carta.dragon {
+.dragon {
   --cor: #7038f8;
 }
 
-.carta.dark {
+.dark {
   --cor: #705848;
 }
 
-.carta.steel {
+.steel {
   --cor: #b8b8d0;
 }
 
-.carta.fairy {
+.fairy {
   --cor: #ee99ac;
 }
 
-/* cor do fundo dos tipos */
-.tipo.normal {
-  background-color: #a8a878;
-}
-
-.tipo.fire {
-  background-color: #f08030;
-}
-
-.tipo.water {
-  background-color: #6890f0;
-}
-
-.tipo.electric {
-  background-color: #f8d030;
-}
-
-.tipo.grass {
-  background-color: #78c850;
-}
-
-.tipo.ice {
-  background-color: #98d8d8;
-}
-
-.tipo.fighting {
-  background-color: #c03028;
-}
-
-.tipo.poison {
-  background-color: #a040a0;
-}
-
-.tipo.ground {
-  background-color: #e0c068;
-}
-
-.tipo.flying {
-  background-color: #a890f0;
-}
-
-.tipo.psychic {
-  background-color: #f85888;
-}
-
-.tipo.bug {
-  background-color: #a8b820;
-}
-
-.tipo.rock {
-  background-color: #b8a038;
-}
-
-.tipo.ghost {
-  background-color: #705898;
-}
-
-.tipo.dragon {
-  background-color: #7038f8;
-}
-
-.tipo.dark {
-  background-color: #705848;
-}
-
-.tipo.steel {
-  background-color: #b8b8d0;
-}
-
-.tipo.fairy {
-  background-color: #ee99ac;
-}
-
-/* ===== Tablet e celular ===== */
+/* ===== celular ===== */
 @media (max-width: 768px) {
   .busca {
     margin-top: 30px;
