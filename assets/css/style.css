@@ -54,29 +54,36 @@ button {
   opacity: 1;
 }
 
+.imgPokebola{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .imgPokebolaCima,
 .imgPokebolaBaixo,
 .carta {
-  display: none;
+  visibility: hidden;
   opacity: 0;
 }
 
 .pokebola {
+  position: relative;
   text-align: center;
 }
 
 .pokebola:has(#mostrar) .imgPokebola {
-  opacity: 0;
   display: none;
-  transition: all 0.3s;
 }
 
 .pokebola:has(#mostrar) .imgPokebolaCima,
 .pokebola:has(#mostrar) .imgPokebolaBaixo,
 .pokebola:has(#mostrar) .carta {
-  display: block;
   opacity: 1;
-  transition: all 0.3s;
+  visibility: visible;
+  transition: all ease 0.3s;
+  margin-bottom: -105px;
 }
 
 .carta {
@@ -119,6 +126,7 @@ button {
   border-radius: 20px;
   background-color: var(--cor);
 }
+
 .carta .tipo2 {
   padding: 3px 14px;
   font-weight: 600;
@@ -128,6 +136,7 @@ button {
   border-radius: 20px;
   background-color: var(--cor);
 }
+
 .carta .medidas {
   display: flex;
   justify-content: space-around;
@@ -200,4 +209,23 @@ button {
 }
 .carta.fairy {
   --cor: #ee99ac;
+}
+
+@media (max-width: 768px) {
+  .busca {
+    margin-top: 30px;
+    padding: 0 16px;
+  }
+
+  .pokebola img {
+    width: 55%;
+    min-width: 0;
+    max-width: 320px;
+  }
+
+  .carta {
+    width: 90%;
+    min-width: 0;
+    max-width: 340px;
+  }
 }
