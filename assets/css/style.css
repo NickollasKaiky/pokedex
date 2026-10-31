@@ -54,36 +54,40 @@ button {
   opacity: 1;
 }
 
+.imgPokebola {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .imgPokebolaCima,
 .imgPokebolaBaixo,
 .carta {
-  display: none;
+  visibility: hidden;
   opacity: 0;
 }
 
 .pokebola {
+  position: relative;
   text-align: center;
 }
 
 .pokebola:has(#mostrar) .imgPokebola {
-  opacity: 0;
   display: none;
-  transition: all 0.3s;
 }
 
 .pokebola:has(#mostrar) .imgPokebolaCima,
 .pokebola:has(#mostrar) .imgPokebolaBaixo,
 .pokebola:has(#mostrar) .carta {
-  display: block;
   opacity: 1;
-  transition: all 0.3s;
+  visibility: visible;
+  transition: all ease 0.3s;
+  margin-bottom: -105px;
 }
 
 .carta {
-  /* display: none; */
   width: 15%;
-  background-color: #111821;
-
   z-index: 2;
   min-width: 300px;
   padding: 16px;
@@ -104,10 +108,6 @@ button {
   margin: 12px 0;
   border: 1px solid var(--cor);
   border-radius: 12px;
-}
-
-.carta .tipos {
-  display: flex;
 }
 
 .carta .tipos {
@@ -145,7 +145,7 @@ button {
   overflow: hidden;
 }
 
-/*cor da borda da carta*/
+/* cor da borda da carta */
 .carta.normal {
   --cor: #a8a878;
 }
@@ -218,7 +218,7 @@ button {
   --cor: #ee99ac;
 }
 
-/*cor do fundo do tipos */
+/* cor do fundo dos tipos */
 .tipo.normal {
   background-color: #a8a878;
 }
@@ -289,4 +289,24 @@ button {
 
 .tipo.fairy {
   background-color: #ee99ac;
+}
+
+/* ===== Tablet e celular ===== */
+@media (max-width: 768px) {
+  .busca {
+    margin-top: 30px;
+    padding: 0 16px;
+  }
+
+  .pokebola img {
+    width: 55%;
+    min-width: 0;
+    max-width: 320px;
+  }
+
+  .carta {
+    width: 90%;
+    min-width: 0;
+    max-width: 340px;
+  }
 }
